@@ -42,14 +42,16 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
             JSONObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
 
             System.out.println(resposta.toJSONString());
-            boolean erro = (boolean) resposta.get("erro");
-            if (erro) {
-                return false;
+            if (resposta.get("erro") != null) {
+                boolean erro = (boolean) resposta.get("erro");
+                if (erro) {
+                    return false;
+                }
             }
             String uf = (String) resposta.get("uf");
             String logradouro = (String) resposta.get("logradouro");
-            String bairro = (String) resposta.get("uf");
-            String cidade = (String) resposta.get("cidade");
+            String bairro = (String) resposta.get("bairro");
+            String cidade = (String) resposta.get("localidade");
             InfoRespostaCepWebService resp = new InfoRespostaCepWebService(uf, cidade, bairro, logradouro);
             return resp.applicarDados(pLocal);
         } catch (Throwable t) {
