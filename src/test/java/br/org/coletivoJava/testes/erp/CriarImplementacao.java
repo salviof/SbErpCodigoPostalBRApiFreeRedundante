@@ -19,7 +19,7 @@ import testesFW.geradorDeCodigo.erp.GeradorERPImplementacaoContexto;
 public class CriarImplementacao {
 
     @Test
-    public void criarAnotacoes() {
+    public void criarImplementaca() {
 
         try {
             SBCore.configurar(new ConfigCoreApiErpCodigoPostal(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
