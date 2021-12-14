@@ -15,7 +15,11 @@ public class CodigoPostalBRApiFreeReduntanteimpl implements ItfCodigoPostalBR {
 
     @Override
     public boolean isCepExiste(String s) {
-        return UtilSBCoreCEPViaCep.cepExiste(s);
+        if (UtilSBCoreCEPViaCep.cepExiste(s)) {
+            return true;
+        } else {
+            return UtilSBCoreCEPRepublicaVirtual.cepExiste(s);
+        }
     }
 
     @Override

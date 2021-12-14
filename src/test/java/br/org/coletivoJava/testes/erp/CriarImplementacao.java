@@ -10,7 +10,7 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import org.apache.logging.log4j.LogManager;
 import org.coletivojava.fw.api.objetoNativo.log.LogPadraoSB;
 import org.junit.Test;
-import testesFW.geradorDeCodigo.erp.GeradorERPImplementacaoContexto;
+import testes.geradorCodigo.erp.GeradorERPImplementacaoContexto;
 
 /**
  *
