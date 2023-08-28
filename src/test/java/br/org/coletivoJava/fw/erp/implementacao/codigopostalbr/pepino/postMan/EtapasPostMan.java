@@ -13,6 +13,7 @@ import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import jakarta.json.JsonObject;
 import java.io.Serializable;
 import org.json.simple.JSONObject;
 import testesFW.ConfigCoreJunitPadrao;
@@ -27,7 +28,7 @@ import testesFW.ConfigCoreJunitPadraoDesenvolvedor;
 public class EtapasPostMan extends org.junit.Assert implements Serializable {
 
     private String numeroCep;
-    private JSONObject objcep;
+    private JsonObject objcep;
     private InfoRespostaCepWebService infoRespostaCepWebService;
     private CodigoPostalBRApiPostMon codigoPostalBRApiPostMon;
     private String bairro, cidade, estado, logradouro;
@@ -44,10 +45,10 @@ public class EtapasPostMan extends org.junit.Assert implements Serializable {
     public void criarumaCampanha() {
 
         objcep = UtilSBCoreClienteRest.getObjetoJsonPorUrl("https://api.postmon.com.br/v1/cep/" + numeroCep);
-        bairro = objcep.get("bairro").toString();
-        cidade = objcep.get("cidade").toString();
-        estado = objcep.get("estado").toString();
-        logradouro = objcep.get("logradouro").toString();
+        bairro = objcep.getString("bairro");
+        cidade = objcep.getString("cidade");
+        estado = objcep.getString("estado");
+        logradouro = objcep.getString("logradouro");
 
     }
 

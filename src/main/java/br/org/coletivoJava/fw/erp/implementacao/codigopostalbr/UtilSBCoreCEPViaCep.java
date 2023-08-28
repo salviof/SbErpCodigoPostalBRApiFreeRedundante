@@ -10,6 +10,7 @@ import br.org.coletivoJava.fw.api.erp.codigopostalbr.UtilSbCoreCepAbs;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocal;
+import jakarta.json.JsonObject;
 import org.json.simple.JSONObject;
 
 /**
@@ -39,19 +40,18 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
         cep = cep.replace("-", "");
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
-            JSONObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
+            JsonObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
 
-            System.out.println(resposta.toJSONString());
             if (resposta.get("erro") != null) {
-                boolean erro = (boolean) resposta.get("erro");
+                boolean erro = (boolean) resposta.getBoolean("erro");
                 if (erro) {
                     return false;
                 }
             }
-            String uf = (String) resposta.get("uf");
-            String logradouro = (String) resposta.get("logradouro");
-            String bairro = (String) resposta.get("bairro");
-            String cidade = (String) resposta.get("localidade");
+            String uf = (String) resposta.getString("uf");
+            String logradouro = (String) resposta.getString("logradouro");
+            String bairro = (String) resposta.getString("bairro");
+            String cidade = (String) resposta.getString("localidade");
             InfoRespostaCepWebService resp = new InfoRespostaCepWebService(uf, cidade, bairro, logradouro);
             return resp.applicarDados(pLocal);
         } catch (Throwable t) {
@@ -70,12 +70,12 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
         cep = cep.replace("-", "");
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
-            JSONObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
-            System.out.println(resposta.toJSONString());
+            JsonObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
+
             if (resposta.get("erro") == null) {
                 return true;
             }
-            boolean erro = (boolean) resposta.get("erro");
+            boolean erro = (boolean) resposta.getBoolean("erro");
             return !erro;
         } catch (Throwable t) {
             return false;

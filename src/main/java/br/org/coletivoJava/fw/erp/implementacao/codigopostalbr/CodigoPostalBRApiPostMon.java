@@ -9,6 +9,7 @@ import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocal;
+import jakarta.json.JsonObject;
 import java.util.List;
 import org.json.simple.JSONObject;
 
@@ -22,7 +23,7 @@ import org.json.simple.JSONObject;
 public class CodigoPostalBRApiPostMon implements ItfCodigoPostalBR {
 
     private InfoRespostaCepWebService infoRespostaCepWebService;
-    private JSONObject objcep;
+    private JsonObject objcep;
 
     @Override
     public boolean configuraEndereco(String cep, ItfLocal pLocal) {
