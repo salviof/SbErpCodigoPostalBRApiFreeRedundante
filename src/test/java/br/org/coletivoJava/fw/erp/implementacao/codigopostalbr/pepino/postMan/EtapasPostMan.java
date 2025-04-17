@@ -15,9 +15,7 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 import jakarta.json.JsonObject;
 import java.io.Serializable;
-import org.json.simple.JSONObject;
-import testesFW.ConfigCoreJunitPadrao;
-import testesFW.ConfigCoreJunitPadraoDesenvolvedor;
+import testesFW.ConfigCoreJunitPadraoDevLib;
 
 /**
  *
@@ -36,7 +34,7 @@ public class EtapasPostMan extends org.junit.Assert implements Serializable {
 
     @Dado("O cep 32667380")
     public void cenarioSemCampanha() {
-        SBCore.configurar(new ConfigCoreJunitPadraoDesenvolvedor(), SBCore.ESTADO_APP.PRODUCAO);
+        SBCore.configurar(new ConfigCoreJunitPadraoDevLib(), SBCore.ESTADO_APP.PRODUCAO);
         numeroCep = "32667380";
         // assertTrue("Eseperava um retorno tre", false);
     }
