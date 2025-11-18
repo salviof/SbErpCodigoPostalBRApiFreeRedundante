@@ -8,10 +8,9 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr;
 import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
 import java.util.List;
-import org.json.simple.JSONObject;
 
 /**
  *
@@ -26,7 +25,7 @@ public class CodigoPostalBRApiPostMon implements ItfCodigoPostalBR {
     private JsonObject objcep;
 
     @Override
-    public boolean configuraEndereco(String cep, ItfLocal pLocal) {
+    public boolean configuraEndereco(String cep, ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
     }
 
@@ -51,12 +50,12 @@ public class CodigoPostalBRApiPostMon implements ItfCodigoPostalBR {
     }
 
     @Override
-    public boolean configurarPosicaoGeogafica(ItfLocal pLocal) {
+    public boolean configurarPosicaoGeogafica(ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
     }
 
     @Override
-    public boolean contribuirCadastroNovoEndereco(ItfLocal pLocal) {
+    public boolean contribuirCadastroNovoEndereco(ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
     }
 

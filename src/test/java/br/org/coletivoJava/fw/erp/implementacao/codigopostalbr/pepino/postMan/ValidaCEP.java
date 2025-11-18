@@ -7,7 +7,7 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr.pepino.postMan;
 
 import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
 import java.util.List;
 
 /**
@@ -19,7 +19,7 @@ import java.util.List;
 public class ValidaCEP implements ItfCodigoPostalBR {
 
     @Override
-    public boolean configuraEndereco(String cep, ItfLocal pLocal) {
+    public boolean configuraEndereco(String cep, ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
 
     }
@@ -36,12 +36,12 @@ public class ValidaCEP implements ItfCodigoPostalBR {
     }
 
     @Override
-    public boolean configurarPosicaoGeogafica(ItfLocal pLocal) {
+    public boolean configurarPosicaoGeogafica(ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
     }
 
     @Override
-    public boolean contribuirCadastroNovoEndereco(ItfLocal pLocal) {
+    public boolean contribuirCadastroNovoEndereco(ComoLocal pLocal) {
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
     }
 

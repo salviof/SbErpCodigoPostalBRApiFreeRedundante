@@ -9,9 +9,8 @@ import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.UtilSbCoreCepAbs;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
-import org.json.simple.JSONObject;
 
 /**
  *
@@ -29,7 +28,7 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
      * @param pLocal O local onde o endereço será configurado
      * @return True se encontrar o CEP, false se não encontrar
      */
-    public static boolean configuraEndereco(String cep, ItfLocal pLocal) {
+    public static boolean configuraEndereco(String cep, ComoLocal pLocal) {
 
         if (UtilSBCoreStringValidador.isNuloOuEmbranco(cep)) {
             return false;
