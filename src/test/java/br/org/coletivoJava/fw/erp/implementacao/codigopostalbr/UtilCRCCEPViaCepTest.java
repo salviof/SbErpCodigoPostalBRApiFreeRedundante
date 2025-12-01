@@ -11,13 +11,13 @@ import org.junit.Test;
  *
  * @author desenvolvedorninja01
  */
-public class UtilSBCoreCEPViaCepTest {
+public class UtilCRCCEPViaCepTest {
 
     @Test
     public void testSomeMethod() {
         // TODO review the generated test code and remove the default call to fail.
-        UtilSBCoreCEPViaCep.configuraEndereco("30190030", null);
-        UtilSBCoreCEPViaCep.configuraEndereco("94543211", null);
+        UtilCRCCEPViaCep.configuraEndereco("30190030", null);
+        UtilCRCCEPViaCep.configuraEndereco("94543211", null);
     }
 
 }

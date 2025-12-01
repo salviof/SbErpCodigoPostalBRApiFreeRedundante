@@ -7,8 +7,8 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr;
 
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.UtilSbCoreCepAbs;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCClienteRest;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCStringValidador;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
 
@@ -18,7 +18,7 @@ import jakarta.json.JsonObject;
  * @since 21/10/2019
  * @version 1.0
  */
-public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
+public class UtilCRCCEPViaCep extends UtilSbCoreCepAbs {
 
     /**
      *
@@ -30,7 +30,7 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
      */
     public static boolean configuraEndereco(String cep, ComoLocal pLocal) {
 
-        if (UtilSBCoreStringValidador.isNuloOuEmbranco(cep)) {
+        if (UtilCRCStringValidador.isNuloOuEmbranco(cep)) {
             return false;
         }
         if (!cep.replace("-", "").matches("\\d{8}")) {
@@ -39,7 +39,7 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
         cep = cep.replace("-", "");
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
-            JsonObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
+            JsonObject resposta = UtilCRCClienteRest.getObjetoJsonPorUrl(url);
 
             if (resposta.get("erro") != null) {
                 boolean erro = (boolean) resposta.getBoolean("erro");
@@ -60,7 +60,7 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
     }
 
     public static boolean cepExiste(String cep) {
-        if (UtilSBCoreStringValidador.isNuloOuEmbranco(cep)) {
+        if (UtilCRCStringValidador.isNuloOuEmbranco(cep)) {
             return false;
         }
         if (!cep.replace("-", "").matches("\\d{8}")) {
@@ -69,7 +69,7 @@ public class UtilSBCoreCEPViaCep extends UtilSbCoreCepAbs {
         cep = cep.replace("-", "");
         String url = "https://viacep.com.br/ws/" + cep + "/json/";
         try {
-            JsonObject resposta = UtilSBCoreClienteRest.getObjetoJsonPorUrl(url);
+            JsonObject resposta = UtilCRCClienteRest.getObjetoJsonPorUrl(url);
 
             if (resposta.get("erro") == null) {
                 return true;

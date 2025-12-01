@@ -15,10 +15,10 @@ public class CodigoPostalBRApiFreeReduntanteimpl implements ItfCodigoPostalBR {
 
     @Override
     public boolean isCepExiste(String s) {
-        if (UtilSBCoreCEPViaCep.cepExiste(s)) {
+        if (UtilCRCCEPViaCep.cepExiste(s)) {
             return true;
         } else {
-            return UtilSBCoreCEPRepublicaVirtual.cepExiste(s);
+            return UtilCRCCEPRepublicaVirtual.cepExiste(s);
         }
     }
 
@@ -29,9 +29,9 @@ public class CodigoPostalBRApiFreeReduntanteimpl implements ItfCodigoPostalBR {
 
     @Override
     public boolean configuraEndereco(String s, ComoLocal itfLocal) {
-        if (!UtilSBCoreCEPViaCep.configuraEndereco(s, itfLocal)) {
+        if (!UtilCRCCEPViaCep.configuraEndereco(s, itfLocal)) {
 
-            return UtilSBCoreCEPRepublicaVirtual.configuraEndereco(s, itfLocal);
+            return UtilCRCCEPRepublicaVirtual.configuraEndereco(s, itfLocal);
         } else {
             return true;
         }

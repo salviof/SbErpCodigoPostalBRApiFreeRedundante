@@ -7,7 +7,7 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr;
 
 import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCClienteRest;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
 import java.util.List;
@@ -38,7 +38,7 @@ public class CodigoPostalBRApiPostMon implements ItfCodigoPostalBR {
     public boolean isCepExiste(String pCep) {
 
         try {
-            objcep = UtilSBCoreClienteRest.getObjetoJsonPorUrl("https://api.postmon.com.br/v1/cep/" + pCep);
+            objcep = UtilCRCClienteRest.getObjetoJsonPorUrl("https://api.postmon.com.br/v1/cep/" + pCep);
 
             return true;
 

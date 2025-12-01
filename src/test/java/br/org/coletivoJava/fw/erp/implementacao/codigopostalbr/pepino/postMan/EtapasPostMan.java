@@ -8,7 +8,7 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr.pepino.postMan;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import br.org.coletivoJava.fw.erp.implementacao.codigopostalbr.CodigoPostalBRApiPostMon;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreClienteRest;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCClienteRest;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Entao;
@@ -42,7 +42,7 @@ public class EtapasPostMan extends org.junit.Assert implements Serializable {
     @Quando("Consulta o webservice postman utilizando https://api.postmon.com.br/v1/cep/")
     public void criarumaCampanha() {
 
-        objcep = UtilSBCoreClienteRest.getObjetoJsonPorUrl("https://api.postmon.com.br/v1/cep/" + numeroCep);
+        objcep = UtilCRCClienteRest.getObjetoJsonPorUrl("https://api.postmon.com.br/v1/cep/" + numeroCep);
         bairro = objcep.getString("bairro");
         cidade = objcep.getString("cidade");
         estado = objcep.getString("estado");
