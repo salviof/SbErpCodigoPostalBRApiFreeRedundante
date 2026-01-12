@@ -8,7 +8,7 @@ package br.org.coletivoJava.fw.erp.implementacao.codigopostalbr;
 import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCClienteRest;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
 import java.util.List;
 

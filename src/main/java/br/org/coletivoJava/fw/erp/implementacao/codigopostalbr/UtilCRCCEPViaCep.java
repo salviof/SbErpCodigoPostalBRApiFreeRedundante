@@ -9,7 +9,7 @@ import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.UtilSbCoreCepAbs;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCClienteRest;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCStringValidador;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.cep.ComoLocal;
 import jakarta.json.JsonObject;
 
 /**

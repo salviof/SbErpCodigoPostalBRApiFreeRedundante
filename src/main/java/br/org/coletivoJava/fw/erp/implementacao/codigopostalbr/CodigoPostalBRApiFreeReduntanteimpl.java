@@ -4,7 +4,7 @@ import br.org.coletivoJava.fw.api.erp.codigoPostal.br.ItfCodigoPostalBR;
 import java.util.List;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.CodigoPostalBRApiFreeReduntante;
 import br.org.coletivoJava.fw.api.erp.codigopostalbr.InfoRespostaCepWebService;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.cep.ComoLocal;
 import javax.inject.Inject;
 
 @CodigoPostalBRApiFreeReduntante
@@ -44,7 +44,7 @@ public class CodigoPostalBRApiFreeReduntanteimpl implements ItfCodigoPostalBR {
 
     @Override
     public boolean contribuirCadastroNovoEndereco(
-            com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoLocal itfLocal) {
+            com.super_bits.modulosSB.SBCore.modulos.objetos.entidade.basico.cep.ComoLocal itfLocal) {
         return false;
     }
 
